@@ -1,0 +1,72 @@
+appId: com.solofounderos.app
+productName: Solo Founder OS
+copyright: Copyright © 2026
+directories:
+  output: dist
+  buildResources: build
+files:
+  - "**/*"
+  - "!**/node_modules/**/*"
+  - "!**/.next/**/*"
+  - "!**/dist/**/*"
+  - "!**/build/**/*"
+  - "!.git"
+  - "!.github"
+  - "!.gitignore"
+  - "!*.log"
+  - "!*.lock"
+  - "!**/data/**/*"
+  - "!**/backend/node_modules/**/*"
+extraResources:
+  - from: ./data
+    to: data
+    filter:
+      - "**/*"
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+        - ia32
+  icon: build/icon.ico
+  publisherName: Solo Founder OS
+  verifyUpdateCodeSignature: false
+mac:
+  target:
+    - target: dmg
+      arch:
+        - x64
+        - arm64
+  icon: build/icon.icns
+  category: public.app-category.productivity
+  hardenedRuntime: true
+  gatekeeperAssess: false
+  entitlements: build/entitlements.mac.plist
+linux:
+  target:
+    - target: AppImage
+      arch:
+        - x64
+        - arm64
+  icon: build/icon.png
+  category: Utility
+  maintainer: Solo Founder OS
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Solo Founder OS
+  installerIcon: build/icon.ico
+  uninstallerIcon: build/icon.ico
+dmg:
+  contents:
+    - x: 130
+      y: 220
+    - x: 410
+      y: 220
+      type: link
+      path: /Applications
+  window:
+    width: 540
+    height: 380
