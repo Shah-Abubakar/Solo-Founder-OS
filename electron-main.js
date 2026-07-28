@@ -7,6 +7,13 @@ let mainWindow
 let backendProcess
 let nextProcess
 
+// IPC handlers
+ipcMain.handle('get-app-version', () => app.getVersion())
+ipcMain.handle('get-database-path', () => path.join(__dirname, 'data', 'solo-founder-os.db'))
+ipcMain.on('minimize-window', () => { if (mainWindow) mainWindow.minimize() })
+ipcMain.on('maximize-window', () => { if (mainWindow) { mainWindow.isMaximized() ? mainWindow.unmaximize() : mainWindow.maximize() } })
+ipcMain.on('close-window', () => { if (mainWindow) mainWindow.close() })
+
 // Create the browser window
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -20,7 +27,6 @@ function createWindow() {
       preload: path.join(__dirname, 'preload.js')
     },
     icon: path.join(__dirname, 'build', 'icon.png'),
-    titleBarStyle: 'hiddenInset',
     backgroundColor: '#0a0a0a',
     show: false,
     frame: true,
@@ -46,37 +52,46 @@ function createWindow() {
   })
 }
 
-// Check if Next.js is running
-function isNextRunning() {
-  return new Promise((resolve) => {
-    const req = require('http').get('http://localhost:3000', (res) => {
-      resolve(res.statusCode === 200)
-    })
-    req.on('error', () => resolve(false))
-    req.setTimeout(1000, () => {
-      req.destroy()
-      resolve(false)
-    })
-  })
-}
-
-// Start Next.js server
+// Start Next.js standalone server
 function startNextServer() {
   return new Promise((resolve, reject) => {
-    const nextPath = path.join(__dirname, 'node_modules', '.bin', 'next')
+    const serverScript = path.join(__dirname, '.next', 'standalone', 'server.js')
     const isWindows = process.platform === 'win32'
-    const cmd = isWindows ? 'cmd' : 'sh'
-    const args = isWindows ? ['/c', nextPath, 'start'] : ['-c', `${nextPath} start`]
 
-    nextProcess = spawn(cmd, args, {
-      cwd: __dirname,
+    if (!fs.existsSync(serverScript)) {
+      console.log('Standalone server not found at', serverScript)
+      console.log('Falling back to next start...')
+      const nextPath = path.join(__dirname, 'node_modules', '.bin', 'next')
+      const cmd = isWindows ? 'cmd' : 'sh'
+      const args = isWindows ? ['/c', nextPath, 'start'] : ['-c', `${nextPath} start`]
+      nextProcess = spawn(cmd, args, {
+        cwd: __dirname,
+        stdio: 'pipe',
+        env: { ...process.env, NODE_ENV: 'production' }
+      })
+      nextProcess.stdout.on('data', (data) => {
+        const output = data.toString()
+        if (output.includes('started') || output.includes('ready') || output.includes('localhost:3000')) {
+          resolve()
+        }
+      })
+      nextProcess.stderr.on('data', (data) => {
+        console.error('Next Error:', data.toString())
+      })
+      setTimeout(() => resolve(), 30000)
+      return
+    }
+
+    nextProcess = spawn('node', [serverScript], {
+      cwd: path.join(__dirname, '.next', 'standalone'),
       stdio: 'pipe',
-      env: { ...process.env, NODE_ENV: 'production' }
+      env: { ...process.env, NODE_ENV: 'production', PORT: '3000' }
     })
 
     nextProcess.stdout.on('data', (data) => {
       const output = data.toString()
-      if (output.includes('started') || output.includes('ready')) {
+      console.log('Next:', output)
+      if (output.includes('localhost:3000') || output.includes('started') || output.includes('ready')) {
         resolve()
       }
     })
@@ -85,66 +100,47 @@ function startNextServer() {
       console.error('Next Error:', data.toString())
     })
 
-    setTimeout(() => resolve(), 15000)
+    setTimeout(() => resolve(), 30000)
   })
 }
 
-// Start backend server
-function startBackend() {
-  return new Promise((resolve) => {
-    const backendPath = path.join(__dirname, 'backend', 'src', 'index.js')
-    
-    backendProcess = spawn('node', [backendPath], {
-      cwd: path.join(__dirname, 'backend'),
-      stdio: 'pipe',
-      env: { ...process.env, NODE_ENV: 'production' }
-    })
-
-    backendProcess.stdout.on('data', (data) => {
-      const output = data.toString()
-      if (output.includes('running on port 3001') || output.includes('listening')) {
-        resolve()
-      }
-    })
-
-    backendProcess.stderr.on('data', (data) => {
-      console.error('Backend Error:', data.toString())
-    })
-
-    setTimeout(() => resolve(), 5000)
-  })
-}
-
-// App lifecycle
-app.whenReady().then(async () => {
-  console.log('Starting Solo Founder OS...')
-  
-  // Ensure data directory
+// Run database setup
+async function ensureDatabase() {
   const dataPath = path.join(__dirname, 'data')
   if (!fs.existsSync(dataPath)) {
     fs.mkdirSync(dataPath, { recursive: true })
   }
 
-  // Check if database exists, if not, run setup
-  const dbPath = path.join(dataPath, 'solo-founder.db')
+  const dbPath = path.join(dataPath, 'solo-founder-os.db')
   if (!fs.existsSync(dbPath)) {
     console.log('Database not found, running setup...')
     await new Promise((resolve) => {
-      const setup = spawn('npm', ['run', 'setup-db'], { cwd: __dirname, stdio: 'pipe' })
-      setup.on('close', () => resolve())
-      setTimeout(() => resolve(), 5000)
+      const setup = spawn('node', [path.join(__dirname, 'scripts', 'setup-db.js')], {
+        cwd: __dirname,
+        stdio: 'pipe'
+      })
+      setup.stdout.on('data', (d) => console.log(d.toString()))
+      setup.stderr.on('data', (d) => console.error(d.toString()))
+      setup.on('close', (code) => {
+        console.log('Setup exited with code', code)
+        resolve()
+      })
+      setTimeout(() => resolve(), 15000)
     })
   }
+}
 
-  // Start backend
-  console.log('Starting backend server...')
-  await startBackend()
-  
-  // Start Next.js
+// App lifecycle
+app.whenReady().then(async () => {
+  console.log('Starting Solo Founder OS...')
+  await ensureDatabase()
   console.log('Starting Next.js server...')
+  const timeout = setTimeout(() => {
+    console.log('Server start timeout — creating window anyway')
+    createWindow()
+  }, 25000)
   await startNextServer()
-  
-  // Create window
+  clearTimeout(timeout)
   console.log('Creating window...')
   createWindow()
 })
