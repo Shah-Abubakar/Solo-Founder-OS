@@ -4,19 +4,29 @@ copyright: Copyright © 2026
 directories:
   output: dist
   buildResources: build
+compression: store
+asar: false
 files:
   - "**/*"
-  - "!**/node_modules/**/*"
-  - "!**/.next/**/*"
   - "!**/dist/**/*"
-  - "!**/build/**/*"
+  - "!**/backend/**/*"
+  - "!**/src/**/*"
+  - "!**/scripts/**/*"
+  - "!**/public/**/*"
   - "!.git"
   - "!.github"
   - "!.gitignore"
+  - "!*.md"
   - "!*.log"
   - "!*.lock"
+  - "!tsconfig.json"
+  - "!postcss.config.js"
+  - "!tailwind.config.js"
+  - "!next-env.d.ts"
+  - "!vercel.json"
   - "!**/data/**/*"
-  - "!**/backend/node_modules/**/*"
+  - "!build/**/*"
+  - "!**/Python/**/*"
 extraResources:
   - from: ./data
     to: data
