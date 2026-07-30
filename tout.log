@@ -1,0 +1,43 @@
+process.type: undefined
+process.versions: {"node":"24.18.0","acorn":"8.16.0","ada":"3.4.4","amaro":"1.1.9","ares":"1.34.6","brotli":"1.2.0","cldr":"48.0","icu":"78.2","llhttp":"9.4.2","merve":"1.2.2","modules":"148","napi":"10","nbytes":"0.1.4","ncrypto":"0.0.1","nghttp2":"1.69.0","nghttp3":"","ngtcp2":"","openssl":"0.0.0","simdjson":"4.6.4","simdutf":"7.7.0","sqlite":"3.53.1","tz":"2025c","undici":"7.28.0","unicode":"17.0","uv":"1.52.1","uvwasi":"0.0.23","v8":"15.0.1240245-electron.0","zlib":"1.3.2.1-motley","zstd":"1.6.0","electron":"43.2.0","chrome":"150.0.7871.129"}
+require.resolve electron: C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\electron\index.js
+module.paths: [
+  'C:\\Users\\DABRU\\OneDrive\\Attachments\\Solo Founder OS\\node_modules',
+  'C:\\Users\\DABRU\\OneDrive\\Attachments\\node_modules',
+  'C:\\Users\\DABRU\\OneDrive\\node_modules',
+  'C:\\Users\\DABRU\\node_modules',
+  'C:\\Users\\node_modules',
+  'C:\\node_modules'
+]
+module.globalPaths: [
+  'C:\\Users\\DABRU\\OneDrive\\Attachments\\Solo Founder OS\\node_modules',
+  'C:\\Users\\DABRU\\OneDrive\\Attachments\\node_modules',
+  'C:\\Users\\DABRU\\OneDrive\\node_modules',
+  'C:\\Users\\DABRU\\node_modules',
+  'C:\\Users\\node_modules',
+  'C:\\node_modules',
+  'C:\\Users\\DABRU\\.node_modules',
+  'C:\\Users\\DABRU\\.node_libraries',
+  'C:\\Users\\DABRU\\OneDrive\\Attachments\\Solo Founder OS\\node_modules\\electron\\dist\\lib\\node'
+]
+process.config: [ 'target_defaults', 'variables' ]
+no binding: electron No such binding was linked: electron
+no binding: electron_app No such binding was linked: electron_app
+no binding: electron_browser No such binding was linked: electron_browser
+no binding: atom No such binding was linked: atom
+no binding: electron_renderer No such binding was linked: electron_renderer
+electron toString: C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\electron\dist\electron.exe
+builtins includes electron: false
+builtins count: 82
+first 20: [
+  '_http_agent',      '_http_client',
+  '_http_common',     '_http_incoming',
+  '_http_outgoing',   '_http_server',
+  '_stream_duplex',   '_stream_passthrough',
+  '_stream_readable', '_stream_transform',
+  '_stream_wrap',     '_stream_writable',
+  '_tls_common',      '_tls_wrap',
+  'assert',           'assert/strict',
+  'async_hooks',      'buffer',
+  'child_process',    'cluster'
+]

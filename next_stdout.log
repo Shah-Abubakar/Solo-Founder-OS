@@ -1,0 +1,55 @@
+ ⚠ You are using a non-standard "NODE_ENV" value in your environment. This creates inconsistencies in the project and is strongly advised against. Read more: https://nextjs.org/docs/messages/non-standard-node-env
+ ⚠ Port 3000 is in use, trying 3001 instead.
+ ⚠ Port 3001 is in use, trying 3002 instead.
+  ▲ Next.js 14.2.29
+  - Local:        http://localhost:3002
+  - Environments: .env.local
+
+ ✓ Starting...
+It looks like you're trying to use TypeScript but do not have the required package(s) installed.
+Installing dependencies
+
+If you are not trying to use TypeScript, please remove the tsconfig.json file from your package root (and any TypeScript files in your pages directory).
+
+
+Installing devDependencies (npm):
+- typescript
+
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: better-auth@1.4.18
+npm warn Found: drizzle-orm@0.38.4
+npm warn node_modules/@agentcorporation/server/node_modules/drizzle-orm
+npm warn   drizzle-orm@"^0.38.4" from @agentcorporation/server@0.3.13
+npm warn   node_modules/@agentcorporation/server
+npm warn     @agentcorporation/server@"0.3.13" from aicompany@0.3.17
+npm warn     node_modules/aicompany
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional drizzle-orm@">=0.41.0" from better-auth@1.4.18
+npm warn node_modules/@agentcorporation/server/node_modules/better-auth
+npm warn   better-auth@"1.4.18" from @agentcorporation/server@0.3.13
+npm warn   node_modules/@agentcorporation/server
+npm warn
+npm warn Conflicting peer dependency: drizzle-orm@0.45.2
+npm warn node_modules/drizzle-orm
+npm warn   peerOptional drizzle-orm@">=0.41.0" from better-auth@1.4.18
+npm warn   node_modules/@agentcorporation/server/node_modules/better-auth
+npm warn     better-auth@"1.4.18" from @agentcorporation/server@0.3.13
+npm warn     node_modules/@agentcorporation/server
+
+up to date, audited 507 packages in 9s
+
+105 packages are looking for funding
+  run `npm fund` for details
+
+10 vulnerabilities (1 moderate, 8 high, 1 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+ ✓ Ready in 12.4s

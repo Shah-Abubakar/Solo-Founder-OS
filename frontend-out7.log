@@ -1,0 +1,276 @@
+  ▲ Next.js 14.2.29
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+It looks like you're trying to use TypeScript but do not have the required package(s) installed.
+Installing dependencies
+
+If you are not trying to use TypeScript, please remove the tsconfig.json file from your package root (and any TypeScript files in your pages directory).
+
+
+Installing devDependencies (npm):
+- typescript
+- @types/react
+
+
+added 81 packages, and audited 480 packages in 14s
+
+98 packages are looking for funding
+  run `npm fund` for details
+
+10 vulnerabilities (1 moderate, 8 high, 1 critical)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+ ✓ Ready in 23.6s
+ ○ Compiling / ...
+ GET / 500 in 11122ms
+ GET / 500 in 63ms
+ GET / 500 in 69ms
+ GET / 500 in 49ms
+ GET / 500 in 23ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 39ms
+ GET /_next/static/chunks/fallback/main.js 500 in 55ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 49ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 48ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 44ms
+ ✓ Compiled /_error in 2.6s (894 modules)
+ GET /_next/static/webpack/0b89eef2a87fa1fc.webpack.hot-update.json 404 in 1672ms
+ GET / 200 in 1242ms
+ GET /_next/static/webpack/0b89eef2a87fa1fc.webpack.hot-update.json 404 in 80ms
+ GET / 200 in 78ms
+ ✓ Compiled /api/chat in 376ms (421 modules)
+ ✓ Compiled (428 modules)
+ GET /api/chat 200 in 906ms
+ GET /api/tasks 200 in 911ms
+ GET /api/poll 200 in 925ms
+ GET /api/chat 200 in 26ms
+ GET /api/tasks 200 in 39ms
+ GET /api/poll 200 in 42ms
+ GET /api/chat 200 in 37ms
+ GET /api/tasks 200 in 42ms
+ GET /api/poll 200 in 40ms
+ GET /api/chat 200 in 40ms
+ GET /api/tasks 200 in 32ms
+ GET /api/poll 200 in 38ms
+ ✓ Compiled /api/agents in 188ms (430 modules)
+ GET /api/agents 200 in 256ms
+ GET /api/agents 200 in 17ms
+ GET / 404 in 18ms
+ GET / 404 in 25ms
+ GET /api/poll 404 in 24ms
+ GET /api/tasks 404 in 28ms
+ GET / 404 in 19ms
+ GET / 404 in 20ms
+ GET / 404 in 27ms
+ GET / 404 in 19ms
+ GET / 404 in 19ms
+ GET / 404 in 20ms
+ GET /api/poll 404 in 22ms
+ GET /api/tasks 404 in 27ms
+ GET / 404 in 19ms
+ GET / 500 in 70ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 76ms
+ GET /_next/static/chunks/fallback/main.js 500 in 74ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 74ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 74ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 72ms
+ GET / 500 in 40ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 80ms
+ GET /_next/static/chunks/fallback/main.js 500 in 78ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 77ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 77ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 77ms
+ GET / 500 in 47ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 91ms
+ GET /_next/static/chunks/fallback/main.js 500 in 90ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 89ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 88ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 85ms
+ GET /api/poll 500 in 68ms
+ GET /api/tasks 500 in 75ms
+ GET /api/poll 500 in 51ms
+ GET /api/tasks 500 in 58ms
+ GET /api/poll 500 in 68ms
+ GET /api/tasks 500 in 76ms
+ GET / 500 in 42ms
+ GET / 500 in 65ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 91ms
+ GET /_next/static/chunks/fallback/main.js 500 in 93ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 90ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 90ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 84ms
+ GET /api/poll 500 in 55ms
+ GET /api/tasks 500 in 62ms
+ GET /api/tasks 500 in 46ms
+ GET /api/tasks 500 in 49ms
+ GET /api/agents 200 in 28ms
+ GET /api/agents 200 in 22ms
+ GET /api/poll 500 in 70ms
+ GET /api/tasks 500 in 77ms
+ GET /api/poll 500 in 91ms
+ GET /api/chat 500 in 106ms
+ GET /api/tasks 500 in 108ms
+ GET /api/poll 500 in 86ms
+ GET /api/chat 500 in 82ms
+ GET /api/tasks 500 in 88ms
+ GET /api/agents 200 in 20ms
+ GET /api/agents 200 in 18ms
+ GET /api/poll 500 in 57ms
+ GET /api/tasks 500 in 63ms
+ GET /api/agents 200 in 17ms
+ GET /api/agents 200 in 18ms
+ GET /api/agents 200 in 21ms
+ GET /api/agents 200 in 17ms
+ GET /api/agents 200 in 20ms
+ GET /api/agents 200 in 19ms
+ GET /api/poll 500 in 86ms
+ GET /api/tasks 500 in 97ms
+ GET /api/chat 500 in 99ms
+ GET /api/poll 500 in 70ms
+ GET /api/chat 500 in 81ms
+ GET /api/tasks 500 in 90ms
+ GET /api/poll 500 in 55ms
+ GET /api/tasks 500 in 62ms
+ GET /api/poll 500 in 50ms
+ GET /api/tasks 500 in 55ms
+ GET /api/poll 500 in 55ms
+ GET /api/tasks 500 in 62ms
+ GET /api/poll 500 in 57ms
+ GET /api/tasks 500 in 58ms
+ GET /api/poll 500 in 52ms
+ GET /api/tasks 500 in 57ms
+ GET /api/poll 500 in 53ms
+ GET /api/tasks 500 in 58ms
+ GET /api/poll 500 in 54ms
+ GET /api/tasks 500 in 60ms
+ GET /api/tasks 500 in 36ms
+ GET /api/tasks 500 in 36ms
+ GET /api/agents 200 in 18ms
+ GET /api/agents 200 in 18ms
+ GET /api/agents 200 in 14ms
+ GET /api/agents 200 in 17ms
+ GET /api/agents 200 in 15ms
+ GET /api/agents 200 in 16ms
+ GET /api/agents 200 in 15ms
+ GET /api/agents 200 in 15ms
+ GET / 500 in 31ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 60ms
+ GET /_next/static/chunks/fallback/main.js 500 in 59ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 58ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 58ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 57ms
+ GET / 500 in 44ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 59ms
+ GET /_next/static/chunks/fallback/main.js 500 in 56ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 55ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 48ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 38ms
+ GET / 500 in 44ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 87ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 85ms
+ GET /_next/static/chunks/fallback/main.js 500 in 81ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 71ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 69ms
+ GET / 500 in 33ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 63ms
+ GET /_next/static/chunks/fallback/main.js 500 in 62ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 60ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 59ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 60ms
+ GET / 500 in 29ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 57ms
+ GET /_next/static/chunks/fallback/main.js 500 in 57ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 57ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 57ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 56ms
+ GET / 500 in 40ms
+ GET /_next/static/chunks/fallback/webpack.js 500 in 59ms
+ GET /_next/static/chunks/fallback/main.js 500 in 56ms
+ GET /_next/static/chunks/fallback/react-refresh.js 500 in 55ms
+ GET /_next/static/chunks/fallback/pages/_app.js 500 in 66ms
+ GET /_next/static/chunks/fallback/pages/_error.js 500 in 65ms
+ GET / 404 in 32ms
+ GET / 404 in 22ms
+ GET / 404 in 19ms
+ GET / 404 in 21ms
+ GET / 404 in 27ms
+ GET / 404 in 18ms
+ GET / 404 in 22ms
+ GET / 404 in 19ms
+ GET / 404 in 19ms
+ GET / 404 in 27ms
+ GET / 404 in 19ms
+ GET / 404 in 18ms
+ GET / 404 in 18ms
+ GET / 404 in 16ms
+ GET / 404 in 28ms
+ GET / 404 in 16ms
+ GET / 404 in 15ms
+ GET / 404 in 17ms
+ GET / 404 in 24ms
+ GET / 404 in 18ms
+ GET / 404 in 19ms
+ GET / 404 in 18ms
+ GET / 404 in 17ms
+ GET / 404 in 17ms
+ GET / 404 in 16ms
+ GET / 404 in 18ms
+ GET / 404 in 17ms
+ GET / 404 in 18ms
+ GET / 404 in 18ms
+ GET / 404 in 15ms
+ GET / 404 in 16ms
+ GET / 404 in 14ms
+ GET / 404 in 18ms
+ GET / 404 in 18ms
+ GET / 404 in 18ms
+ GET / 404 in 17ms
+ GET / 404 in 15ms
+ GET / 404 in 20ms
+ GET / 404 in 19ms
+ GET / 404 in 18ms
+ GET / 404 in 18ms
+ GET / 404 in 17ms
+ GET / 404 in 20ms
+ GET / 404 in 16ms
+ GET / 404 in 17ms
+ GET / 404 in 19ms
+ GET / 404 in 17ms
+ GET / 404 in 19ms
+ GET / 404 in 19ms
+ GET / 404 in 18ms
+ GET / 404 in 15ms
+ GET / 404 in 19ms
+ GET / 404 in 25ms
+ GET / 404 in 25ms
+ GET / 404 in 17ms
+ GET / 404 in 17ms
+ GET / 404 in 18ms
+ GET / 404 in 17ms
+ GET / 404 in 16ms
+ GET / 404 in 20ms
+ GET / 404 in 18ms
+ GET / 404 in 21ms
+ GET / 404 in 20ms
+ ✓ Compiled in 4.8s (905 modules)
+ ✓ Compiled in 649ms (905 modules)
+ ✓ Compiled in 708ms (905 modules)
+ ✓ Compiled in 524ms (905 modules)
+ ✓ Compiled in 462ms (905 modules)
+ ✓ Compiled in 604ms (905 modules)
+ ✓ Compiled in 526ms (905 modules)
+ ✓ Compiled in 596ms (905 modules)
+ ✓ Compiled in 468ms (905 modules)
+ ✓ Compiled in 425ms (515 modules)
+ ✓ Compiled in 433ms (515 modules)
+ ✓ Compiled in 926ms (905 modules)
+ ✓ Compiled in 742ms (907 modules)
+[?25h

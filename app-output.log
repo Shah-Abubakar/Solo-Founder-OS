@@ -1,0 +1,40 @@
+Starting Solo Founder OS...
+
+Starting backend (port 3001)...
+[backend] Database initialized at C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\data\solo-founder-os.db
+[backend] Solo Founder OS backend running on http://localhost:3001
+Backend is running
+
+Starting frontend (port 3000)...
+[next]   ▲ Next.js 14.2.29
+[next]   - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ✓ Starting...
+Frontend is running
+
+Open browser to http://localhost:3000
+
+Solo Founder OS is ready!
+  Frontend: http://localhost:3000
+  Backend:  http://localhost:3001
+
+Press Ctrl+C to stop all services.
+[next:err] Error: EINVAL: invalid argument, readlink 'C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\.next\types\package.json'
+    at async Object.readlink (node:internal/fs/promises:973:10)
+    at async C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\lib\recursive-delete.js:58:30
+    at async Promise.all (index 1)
+    at async recursiveDelete (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\lib\recursive-delete.js:51:5)
+    at async C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\lib\recursive-delete.js:68:17
+    at async Promise.all (index 3)
+    at async recursiveDelete (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\lib\recursive-delete.js:51:5)
+    at async Span.traceAsyncFn (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\trace\trace.js:154:20)
+    at async HotReloaderWebpack.start (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\server\dev\hot-reloader-webpack.js:612:9)
+    at async startWatcher (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js:156:5) {
+  errno: -4071,
+  code: 'EINVAL',
+  syscall: 'readlink',
+  path: 'C:\\Users\\DABRU\\OneDrive\\Attachments\\Solo Founder OS\\.next\\types\\package.json'
+}
+[next] [?25h[next] 
+[backend:err] ^C

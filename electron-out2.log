@@ -1,0 +1,25 @@
+electron: string 0,1,2,3,4,5,6,7
+electron/main: ERROR - Cannot find module 'electron/main'
+Require stack:
+- C:\Users
+original-fs: object appendFile,appendFileSync,access,accessSync,chown,chownSync,chmod,chmodSync
+electron/common: ERROR - Cannot find module 'electron/common'
+Require stack:
+- C:\Use
+electron/renderer: ERROR - Cannot find module 'electron/renderer'
+Require stack:
+- C:\U
+
+process.type: undefined
+Built-in electron modules: [
+  'electron/js2c/browser_init',
+  'electron/js2c/isolated_bundle',
+  'electron/js2c/node_init',
+  'electron/js2c/preload_realm_bundle',
+  'electron/js2c/renderer_init',
+  'electron/js2c/sandbox_bundle',
+  'electron/js2c/utility_init',
+  'electron/js2c/worker_init',
+  'original-fs',
+  'original-fs/promises'
+]

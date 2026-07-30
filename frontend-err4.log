@@ -1,0 +1,37 @@
+npm warn ERESOLVE overriding peer dependency
+npm warn While resolving: better-auth@1.4.18
+npm warn Found: drizzle-orm@0.38.4
+npm warn node_modules/@agentcorporation/server/node_modules/drizzle-orm
+npm warn   drizzle-orm@"^0.38.4" from @agentcorporation/server@0.3.13
+npm warn   node_modules/@agentcorporation/server
+npm warn     @agentcorporation/server@"0.3.13" from aicompany@0.3.17
+npm warn     node_modules/aicompany
+npm warn
+npm warn Could not resolve dependency:
+npm warn peerOptional drizzle-orm@">=0.41.0" from better-auth@1.4.18
+npm warn node_modules/@agentcorporation/server/node_modules/better-auth
+npm warn   better-auth@"1.4.18" from @agentcorporation/server@0.3.13
+npm warn   node_modules/@agentcorporation/server
+npm warn
+npm warn Conflicting peer dependency: drizzle-orm@0.45.2
+npm warn node_modules/drizzle-orm
+npm warn   peerOptional drizzle-orm@">=0.41.0" from better-auth@1.4.18
+npm warn   node_modules/@agentcorporation/server/node_modules/better-auth
+npm warn     better-auth@"1.4.18" from @agentcorporation/server@0.3.13
+npm warn     node_modules/@agentcorporation/server
+Error: EINVAL: invalid argument, readlink 'C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\.next\package.json'
+    at async Object.readlink (node:internal/fs/promises:973:10)
+    at async C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\lib\recursive-delete.js:58:30
+    at async Promise.all (index 3)
+    at async recursiveDelete (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\lib\recursive-delete.js:51:5)
+    at async Span.traceAsyncFn (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\trace\trace.js:154:20)
+    at async HotReloaderWebpack.start (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\server\dev\hot-reloader-webpack.js:612:9)
+    at async startWatcher (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js:156:5)
+    at async setupDevBundler (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js:775:20)
+    at async Span.traceAsyncFn (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\trace\trace.js:154:20)
+    at async initialize (C:\Users\DABRU\OneDrive\Attachments\Solo Founder OS\node_modules\next\dist\server\lib\router-server.js:80:30) {
+  errno: -4071,
+  code: 'EINVAL',
+  syscall: 'readlink',
+  path: 'C:\\Users\\DABRU\\OneDrive\\Attachments\\Solo Founder OS\\.next\\package.json'
+}

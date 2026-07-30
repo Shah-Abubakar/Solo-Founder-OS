@@ -1,0 +1,1 @@
+console.log('typeof require:', typeof require); const p = require('electron/package.json'); console.log('Package:', p.name, p.version); const m = require('module'); console.log('Module._resolveFilename:', typeof m._resolveFilename);

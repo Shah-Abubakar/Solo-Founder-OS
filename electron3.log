@@ -1,0 +1,6 @@
+Starting Electron...
+ENV has ELECTRON_RUN_AS_NODE: false
+[stdout] 
+[stderr] (node:17892) electron: Failed to load URL: http://localhost:3000/ with error: ERR_CONNECTION_REFUSED
+(Use `electron --trace-warnings ...` to show where the warning was created)
+Exited with code 4294967295

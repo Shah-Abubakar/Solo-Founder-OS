@@ -1,0 +1,1 @@
+try { const m = require('module'); console.log('builtinModules:', JSON.stringify(m.builtinModules)); } catch(e) { console.log('Error:', e.message); } try { const el = process._linkedBinding ? process._linkedBinding('electron') : 'no _linkedBinding'; console.log('_linkedBinding electron:', typeof el); } catch(e) { console.log('linkedBinding error:', e.message); }
